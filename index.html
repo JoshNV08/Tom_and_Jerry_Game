@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom vs Jerry</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Elementos del juego -->
+  <div id="cuadrado"></div>
+  <div id="cuadrado2"></div>
+  <div id="powerPill" class="power-pill"></div>
+  <div id="spike"></div>
+
+  <!-- Elementos de puntuación y temporizador -->
+  <div id="score">Puntuación: Tom: 0, Jerry: 0</div>
+  <br />
+  <div id="timer">Tiempo restante: 30</div>
+
+  <!-- Música de fondo -->
+  <audio id="musicaFondo" src="music/music.mp3"></audio>
+
+  <!-- Contenedor de botones -->
+  <div id="boton-contenedor">
+    <button id="menuButton" class="action-button">Menú</button>
+    <button id="initialPosition">Reiniciar</button>
+    <button id="pausarMusica" class="mute-button">Pausar Música</button>
+  </div>
+
+  <!-- Efectos de sonido -->
+  <audio src="music/point.mp3" id="point"></audio>
+  <audio src="music/bonuspill.mp3" id="bonusPill"></audio>
+
+  <!-- Modal del juego -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <img src="images/logo.png" alt="Logo del menú" class="menu-logo" />
+      <h2 id="creditText">Reglas del juego</h2>
+      <p>1- Si Tom atrapa a Jerry, 1 punto para Tom.</p>
+      <p>2- Si Jerry aguanta los 30 segundos, 1 punto para Jerry.</p>
+      <p>3- Gana el que tenga más puntos.</p>
+      <div class="button-container">
+        <button id="playButton" class="menu-button">Jugar</button>
+        <button id="muteButton" class="menu-button">Pausar Música</button>
+        <button id="controlButton" class="menu-button">Controles</button>
+      </div>
+    </div>
+  </div>
+<!-- Modal de Controles-->
+  <div id="modalControles" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeControles">&times;</span>
+      <h2>Controles del juego</h2>
+      <p>Utiliza las teclas de flecha para mover a Tom.</p>
+      <p>Utiliza las teclas 'W', 'A', 'S' y 'D' para mover a Jerry.</p>
+      <p>R o J: Reiniciar Juego</p>
+      <p>M: Silenciar Musica</p>
+      <p>Esc: Abrir Menu</p>
+      <p>C: Ver Controles</p>
+      <p>Importante: NO acticar Bloq Mayus</p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/mobile.js"></script>
+</body>
+</html>

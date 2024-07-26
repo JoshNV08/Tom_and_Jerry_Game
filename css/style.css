@@ -1,0 +1,257 @@
+/* Ajuste general para evitar el desbordamiento en elementos */
+* {
+  overflow: hidden;
+}
+
+/* Estilo del fondo */
+body {
+  background-image: url(../images/fondo.png);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Estilo del primer cuadrado (Tom) */
+#cuadrado {
+  width: 130px;
+  /* Tamaño del cuadrado */
+  height: 105px;
+  border-radius: 20%;
+  /* Bordes redondeados */
+  background-image: url(../images/tom.png);
+  /* Imagen de fondo de Tom */
+  background-size: cover;
+  position: absolute;
+}
+
+/* Estilo del segundo cuadrado (Jerry) */
+#cuadrado2 {
+  width: 95px;
+  /* Tamaño del cuadrado */
+  height: 75px;
+  border-radius: 20%;
+  /* Bordes redondeados */
+  background-image: url(../images/jerry.png);
+  /* Imagen de fondo de Jerry */
+  background-size: cover;
+  position: absolute;
+  background-color: transparent;
+}
+#cuadrado2.spike {
+  width: 120px; 
+  height: 120px; 
+}
+
+
+/* Estilo de la píldora de poder */
+.power-pill {
+  width: 50px; /* Ancho de la píldora de poder */
+  height: 50px; /* Alto de la píldora de poder */
+  border-radius: 50%; /* Hace que la píldora sea circular */
+  position: absolute;
+  background-image: url(../images/cheese.png);
+  /* Imagen de fondo de la píldora de poder */
+  display: none; /* Inicialmente oculta la píldora de poder */
+  background-size: cover;
+}
+
+/* Estilo para los elementos de puntuación y temporizador */
+
+#score {
+  font-size: larger;
+}
+#score,
+#timer {
+  font-family: Arial, sans-serif;
+  
+  color: white;
+  background-color: transparent;
+  position: absolute;
+}
+
+
+/* Estilo para el contenedor de botones */
+#boton-contenedor {
+  position: fixed;
+  display: flex;
+  top: 5px;
+  right: 5px;
+}
+
+/* Estilo del botón de restablecer posición inicial */
+#initialPosition {
+  position: fixed;
+  top: 5px;
+  right: 250px;
+}
+
+/* Estilo de botones para silenciar música y restablecer posición inicial */
+.mute-button,
+#initialPosition {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.mute-button:hover,
+#initialPosition:hover {
+  background-color: red;
+}
+
+.mute-button:active,
+#initialPosition:active {
+  background-color: red;
+}
+
+/* Estilo para la barra de encabezado del menú */
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilo del logotipo del menú */
+.menu-logo {
+  max-width: 250px; /* Ajusta el tamaño del logo según tus necesidades */
+  margin-left: 80px;
+}
+
+/* Estilo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscurecido */
+  z-index: 1;
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: #fff;
+  width: 60%;
+  max-width: 400px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Estilo del botón para cerrar el modal */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Estilo de títulos y párrafos en el modal */
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: left;
+}
+
+/* Estilo de botones de menú */
+.menu-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.menu-button:hover {
+  background-color: #e2363c;
+}
+
+.menu-button:active {
+  background-color: red;
+}
+
+/* Estilo para el contenedor de botones en el modal */
+.button-container {
+  text-align: center;
+}
+
+/* Estilo para botones de acción */
+.action-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.action-button:hover {
+  background-color: red;
+}
+
+.action-button:active {
+  background-color: red;
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Oculta los botones de teclado */
+  #boton-contenedor {
+    display: none;
+  }
+
+  }
+
+  #controls {
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre los botones */
+    width: 200px; /* Ajusta el ancho de los controles según tus necesidades */
+  }
+  
+  #controls button {
+    width: 40px; /* Ajusta el tamaño de los botones según tus preferencias */
+    height: 40px;
+    font-size: 24px; /* Ajusta el tamaño del icono de flecha según tus preferencias */
+    background-color: #333; /* Ajusta el color de fondo según tus preferencias */
+    color: #fff; /* Ajusta el color del texto según tus preferencias */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #controls button:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+  }
+  
